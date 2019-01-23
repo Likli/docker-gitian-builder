@@ -16,7 +16,7 @@ apt-get -yq purge grub > /dev/null 2>&1 || true && \
 apt-get -y dist-upgrade && \
 locale-gen en_US.UTF-8 && \
 update-locale LANG=en_US.UTF-8 && \
-bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder' && \
+bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/mammix2/gitian-builder /shared/gitian-builder' && \
 useradd -d /home/ubuntu -m -s /bin/bash ubuntu && \
 chown -R ubuntu.ubuntu /shared/ && \
 chown root.root /shared/gitian-builder/target-bin/grab-packages.sh && \
