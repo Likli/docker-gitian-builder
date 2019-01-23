@@ -2,3 +2,5 @@
 *.tmp
 *.swp
 *.log
+*.tar.gz
+*.tar.gz.hash
