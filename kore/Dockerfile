@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:bionic
 MAINTAINER Mammix2 <mammix2@hotmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /shared
@@ -9,6 +9,8 @@ git-core \
 build-essential \
 ca-certificates \
 ruby \
+sudo \
+rename \
 rsync && \
 apt-get -yq purge grub > /dev/null 2>&1 || true && \
 apt-get -y dist-upgrade && \
