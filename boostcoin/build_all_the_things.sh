@@ -27,7 +27,7 @@ check_mac () {
   fi
 }
 
-fall_back_branch_or_tag="v5.0.1.0-beta"
+fall_back_branch_or_tag="v5.0.1.4-beta"
 branch_or_tag=
 if [ -z "${1}" ]; then
   branch_or_tag=`get_latest_tag`
@@ -57,5 +57,5 @@ for platform in "${platforms[@]}"; do
   builder \
   "${branch_or_tag}" \
   "${repo}" \
-  "../bitcoin/contrib/gitian-descriptors/gitian-${platform}.yml"
+  "../boostcoin/contrib/gitian-descriptors/gitian-${platform}.yml"
 done
