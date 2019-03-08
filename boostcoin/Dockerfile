@@ -28,5 +28,5 @@ RUN printf "[[ -d /shared/boostcoin ]] || \
 git clone -b \$1 --depth 1 \$2 /shared/boostcoin && \
 cd /shared/gitian-builder; \
 ./bin/gbuild --skip-image --commit boostcoin=\$1 --url boostcoin=\$2 \$3" > /home/ubuntu/runit.sh
-CMD ["v5.0.1.4-beta","https://github.com/mammix2/boostcoin.git","../boostcoin/contrib/gitian-descriptors/gitian-win.yml"]
+CMD ["v5.0.1.5-beta","https://github.com/mammix2/boostcoin.git","../boostcoin/contrib/gitian-descriptors/gitian-win.yml"]
 ENTRYPOINT ["bash", "/home/ubuntu/runit.sh"]
