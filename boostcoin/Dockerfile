@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Chris Kleeschulte <chrisk@bitpay.com>
+MAINTAINER Mammix2 <mammix2@hotmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /shared
 RUN apt-get update && \
