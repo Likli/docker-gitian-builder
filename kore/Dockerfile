@@ -30,7 +30,7 @@ RUN printf "[[ -d /shared/kore ]] || \
 git clone -b \$1 --depth 1 \$2 /shared/kore && \
 cd /shared/gitian-builder; \
 ./bin/gbuild --skip-image --commit kore=\$1 --url kore=\$2 \$3" > /home/ubuntu/runit.sh
-CMD ["v0.12.6.3-beta","https://bitbucket.org/mammix2/kore-dev.git","../kore/contrib/gitian-descriptors/gitian-win.yml"]
+CMD ["v0.13.0.0-beta","https://bitbucket.org/mammix2/expresskore-mammix2.git","../kore/contrib/gitian-descriptors/gitian-win.yml"]
 ENTRYPOINT ["bash", "/home/ubuntu/runit.sh"]
 
 

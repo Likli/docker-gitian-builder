@@ -12,10 +12,10 @@ cyan="\033[38;5;87m"
 reset="\033[0m"
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 masterApiEndpoint="https://api.github.com"
-repo="https://github.com/btc1/bitcoin"
+repo="https://github.com/mammix2/expresskore-mammix2"
 
 get_latest_tag () {
-  local url="curl ${masterApiEndpoint}/repos/btc1/bitcoin/tags"
+  local url="curl ${masterApiEndpoint}/repos/mammix2/expresskore-mammix2/tags"
   response=(`${url} 2>/dev/null | sed -n 's/"name": "\(.*\)",$/\1/p'`)
   echo ${response[0]}
 }
@@ -27,7 +27,7 @@ check_mac () {
   fi
 }
 
-fall_back_branch_or_tag="v1.14.1rc2"
+fall_back_branch_or_tag="v0.13.0.0-beta"
 branch_or_tag=
 if [ -z "${1}" ]; then
   branch_or_tag=`get_latest_tag`
@@ -45,7 +45,7 @@ fi
 
 $THISDIR/build_builder.sh
 
-platforms=("mac" "windows" "linux")
+platforms=("osx" "win" "linux")
 
 for platform in "${platforms[@]}"; do
   check_mac "${platform}"
@@ -57,5 +57,5 @@ for platform in "${platforms[@]}"; do
   builder \
   "${branch_or_tag}" \
   "${repo}" \
-  "../bitcoin/contrib/gitian-descriptors/gitian-${platform}.yml"
+  "../expresskore-mammix2/contrib/gitian-descriptors/gitian-${platform}.yml"
 done
