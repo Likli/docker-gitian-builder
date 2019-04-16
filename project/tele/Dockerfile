@@ -24,9 +24,9 @@ chown root.root /etc/sudoers.d/ubuntu && \
 chmod 0400 /etc/sudoers.d/ubuntu && \
 chown -R ubuntu.ubuntu /home/ubuntu
 USER ubuntu
-RUN printf "[[ -d /shared/boostcoin ]] || \
-git clone -b \$1 --depth 1 \$2 /shared/boostcoin && \
+RUN printf "[[ -d /shared/tele ]] || \
+git clone -b \$1 --depth 1 \$2 /shared/tele && \
 cd /shared/gitian-builder; \
-./bin/gbuild --skip-image --commit boostcoin=\$1 --url boostcoin=\$2 \$3" > /home/ubuntu/runit.sh
-CMD ["v5.0.1.5-beta","https://github.com/mammix2/boostcoin.git","../boostcoin/contrib/gitian-descriptors/gitian-win.yml"]
+./bin/gbuild --skip-image --commit tele=\$1 --url tele=\$2 \$3" > /home/ubuntu/runit.sh
+CMD ["v1.0.0.10-beta","https://github.com/mammix2/tele.git","../tele/contrib/gitian-descriptors/gitian-win.yml"]
 ENTRYPOINT ["bash", "/home/ubuntu/runit.sh"]
