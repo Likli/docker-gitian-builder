@@ -27,12 +27,12 @@ function fName_Error() {
 function fPlat_Error() {
 	echo -e "Missing \e[1m<target platform>\e[0m parameter."
 	echo -e "Options: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux] (Case sensitive)"
-	echo -e "Example: ./build_builder.sh boostcoin \e[1mwin\e[0m"
+	echo -e "Usage: ./build_builder.sh boostcoin \e[1mwin\e[0m"
 }
 function fPlat_Incorrect() {
 	echo -e "Incorrect \e[1m<target platform>\e[0m parameter. make sure to specify [osx, win or linux] target platform"
 	echo -e "Format: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux] (Case sensitive)"
-	echo -e "Example: ./build_builder.sh boostcoin \e[1mwin\e[0m"
+	echo -e "Usage: ./build_builder.sh boostcoin \e[1mwin\e[0m"
 }
 function fError() {
 	echo -e "\e[41m### Error ###\e[0m"
