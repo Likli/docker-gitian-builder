@@ -15,23 +15,23 @@ function fHeader() {
 }
 function fStartInfo() {
 	echo -e " "
-	echo -e ">> Starting project: $1"
-	echo -e ">> Building for platform: $2"
+	echo -e ">> Starting project: \e[32m\e[1m$1\e[0m\e[0m"
+	echo -e ">> Building for platform: \e[32m\e[1m$2\e[0m\e[0m"
 	echo -e " "
 }
 function fName_Error() {
-	echo -e "Missing \e[1m<projectname>\e[0m parameter. Make sure project Dockerfile_xxx exists in path 'project/<projectname>/Dockerfile_<target platform>' e.g. Dockerfile_win [osx, win, linux]"
-	echo -e "Options: ./build_builder.sh \e[1m<projectname>\e[0m <target platform>"
+	echo -e "Missing \e[1m<projectname>\e[0m parameter. Make sure project Dockerfile_xxx exists in path 'project/<projectname>/Dockerfile_<target platform>' e.g. \e[1mDockerfile_win\e[0m [osx, win, linux] (Case sensitive)"
+	echo -e "Options: ./build_builder.sh \e[1m<projectname>\e[0m <target platform> (Case sensitive)"
 	echo -e "Usage: ./build_builder.sh \e[1mboostcoin\e[0m win"
 }
 function fPlat_Error() {
 	echo -e "Missing \e[1m<target platform>\e[0m parameter."
-	echo -e "Options: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux]"
+	echo -e "Options: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux] (Case sensitive)"
 	echo -e "Example: ./build_builder.sh boostcoin \e[1mwin\e[0m"
 }
 function fPlat_Incorrect() {
 	echo -e "Incorrect \e[1m<target platform>\e[0m parameter. make sure to specify [osx, win or linux] target platform"
-	echo -e "Format: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux]"
+	echo -e "Format: ./build_builder.sh <projectname> \e[1m<target platform>\e[0m [osx, win, linux] (Case sensitive)"
 	echo -e "Example: ./build_builder.sh boostcoin \e[1mwin\e[0m"
 }
 function fError() {
@@ -40,7 +40,7 @@ function fError() {
 function fRun_Builder() {
 	fHeader
 	fStartInfo  $1 $2
-	docker build -t builder -f project/$1/Dockerfile_$2 .	
+	#docker build -t builder -f project/$1/Dockerfile_$2 .	
 }
 
 if [ -z "$1" ]
