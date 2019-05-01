@@ -26,8 +26,8 @@ chown root.root /etc/sudoers.d/ubuntu && \
 chmod 0400 /etc/sudoers.d/ubuntu && \
 chown -R ubuntu.ubuntu /home/ubuntu
 USER ubuntu
-RUN printf "[[ -d /shared/kore ]] || \
-git clone -b \$1 --depth 1 \$2 /shared/kore && \
+RUN printf "[[ -d /shared/tele ]] || \
+git clone -b \$1 --depth 1 \$2 /shared/tele && \
 cd /shared/gitian-builder; \
 ./bin/gbuild --skip-image --commit tele=\$1 --url tele=\$2 \$3" > /home/ubuntu/runit.sh
 CMD ["v1.0.0.16","https://github.com/mammix2/tele.git","../tele/contrib/gitian-descriptors/gitian-osx.yml"]
