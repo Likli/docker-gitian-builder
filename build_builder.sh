@@ -20,7 +20,7 @@ function fStartInfo() {
 	echo -e " "
 }
 function fName_Error() {
-	echo -e "Missing \e[1m<projectname>\e[0m parameter. make sure project Dockerfile exists in path 'project/<projectname>/Dockerfile-<target platform>'"
+	echo -e "Missing \e[1m<projectname>\e[0m parameter. make sure project Dockerfile exists in path 'project/<projectname>/Dockerfile_<target platform>'"
 	echo -e "Options: ./build_builder.sh \e[1m<projectname>\e[0m <target platform>"
 	echo -e "Usage: ./build_builder.sh \e[1mboostcoin\e[0m win"
 }
