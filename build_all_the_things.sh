@@ -12,10 +12,10 @@ cyan="\033[38;5;87m"
 reset="\033[0m"
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 masterApiEndpoint="https://api.github.com"
-repo="https://github.com/mammix2/boostcoin"
+repo="https://github.com/mammix2/tele"
 
 get_latest_tag () {
-  local url="curl ${masterApiEndpoint}/repos/mammix2/boostcoin/tags"
+  local url="curl ${masterApiEndpoint}/repos/mammix2/tele/tags"
   response=(`${url} 2>/dev/null | sed -n 's/"name": "\(.*\)",$/\1/p'`)
   echo ${response[0]}
 }
@@ -27,7 +27,7 @@ check_mac () {
   fi
 }
 
-fall_back_branch_or_tag="v5.0.1.5-beta"
+fall_back_branch_or_tag="master"
 branch_or_tag=
 if [ -z "${1}" ]; then
   branch_or_tag=`get_latest_tag`
@@ -57,5 +57,5 @@ for platform in "${platforms[@]}"; do
   builder \
   "${branch_or_tag}" \
   "${repo}" \
-  "../boostcoin/contrib/gitian-descriptors/gitian-${platform}.yml"
+  "../tele/contrib/gitian-descriptors/gitian-${platform}.yml"
 done
