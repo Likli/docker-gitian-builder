@@ -40,7 +40,7 @@ function fError() {
 function fRun_Builder() {
 	fHeader
 	fStartInfo  $1 $2
-	docker build -t builder -f project/$1/Dockerfile_$2 .	
+	docker build --build-arg threads=$threads -t builder -f project/$1/Dockerfile_$2 .	
 }
 
 if [ -z "$1" ]
