@@ -12,10 +12,10 @@ cyan="\033[38;5;87m"
 reset="\033[0m"
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 masterApiEndpoint="https://api.github.com"
-repo="https://github.com/mammix2/tele"
+repo="https://github.com/likli/tele"
 
 get_latest_tag () {
-  local url="curl ${masterApiEndpoint}/repos/mammix2/tele/tags"
+  local url="curl ${masterApiEndpoint}/repos/likli/tele/tags"
   response=(`${url} 2>/dev/null | sed -n 's/"name": "\(.*\)",$/\1/p'`)
   echo ${response[0]}
 }
